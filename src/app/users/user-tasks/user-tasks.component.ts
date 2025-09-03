@@ -17,11 +17,14 @@ export class UserTasksComponent implements OnInit{
   private activatedRoute = inject(ActivatedRoute)
   private destroyRef = inject(DestroyRef)
 
+  message = input.required<string>()
+
   // userName = computed(() => 
   //   this.usersService.users.find(u => u.id === this.userId())?.name
   // )
 
   ngOnInit(): void {
+    console.log("MSG DATA:",this.message())
     console.log(this.activatedRoute);
     console.log(this.activatedRoute.snapshot.paramMap.get('userId'));
     
