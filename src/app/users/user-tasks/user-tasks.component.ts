@@ -34,3 +34,10 @@ export const resolveUserName: ResolveFn<string> = (
   )?.name || '';
   return username
 }
+
+export const resolveTitle: ResolveFn<string> = (
+  activatedRoute,
+  routerState
+) => {
+  return resolveUserName(activatedRoute,routerState) + '\'s Tasks'
+}
